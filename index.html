@@ -81,6 +81,23 @@
     </iframe>
     </div>
 
+     <script>
+        // Get stored count and last visit time
+        let visitCount = localStorage.getItem("visitCount") || 0;
+        let lastVisit = localStorage.getItem("lastVisit") || "Never";
+
+        // Update the count and save
+        visitCount++;
+        localStorage.setItem("visitCount", visitCount);
+
+        // Get current date and time
+        let currentTime = new Date().toLocaleString();
+        localStorage.setItem("lastVisit", currentTime);
+
+        // Display the values
+        document.getElementById("visitCount").textContent = visitCount;
+        document.getElementById("lastVisit").textContent = lastVisit;
+    </script>
         <footer>
             <p>Created by: Sree Lemon Chandra Mohonta</p>
             <p>Contact information: <a href="mailto:mowcamohonta@gamil.com>">Email</a></p>
